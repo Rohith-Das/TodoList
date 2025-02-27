@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Task</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .edit-form {
+      margin-bottom: 20px;
+    }
+    .edit-form input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .btn-container {
+      display: flex;
+      gap: 10px;
+    }
+    .update-btn, .cancel-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .update-btn {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .cancel-btn {
+      background-color: #f44336;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Edit Task</h1>
+  
+  <form action="/update/<%= task._id %>" method="POST" class="edit-form">
+    <input type="text" name="task" value="<%= task.task %>" required>
+    <div class="btn-container">
+      <button type="submit" class="update-btn">Update Task</button>
+      <a href="/" class="cancel-btn">Cancel</a>
+    </div>
+  </form>
+</body>
+</html>
